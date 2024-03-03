@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Adv160421055Week2</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="start">Start</string>
+    <string name="player_name">Player Name</string>
+    <string name="back">back</string>
+    <string name="player_s_turn">Player\'s Turn</string>
+</resources>
