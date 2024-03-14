@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.ubaya.adv160421055week2.databinding.FragmentMainBinding
 import com.ubaya.adv160421055week2.databinding.FragmentOptionBinding
 
 
@@ -17,7 +18,11 @@ class OptionFragment : BottomSheetDialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_option, container, false)
+        binding = FragmentOptionBinding.inflate(
+            inflater,
+            container, false
+        )
+        return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -25,7 +30,4 @@ class OptionFragment : BottomSheetDialogFragment() {
             android.R.layout.simple_dropdown_item_1line, LEVEL)
         binding.txtLevel.setAdapter(adapter)
     }
-
-
-
 }
