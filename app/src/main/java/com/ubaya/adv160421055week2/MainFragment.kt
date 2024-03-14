@@ -27,8 +27,12 @@ class MainFragment : Fragment() {
             val playerName = binding.txtName.text.toString()
             val action = MainFragmentDirections.actionGameFragment(playerName)
             Navigation.findNavController(it).navigate(action)
-
         }
+        binding.btnOption.setOnClickListener {
+            val action = MainFragmentDirections.actionOptionFragment()
+            Navigation.findNavController(it).navigate(action)
+        }
+
     }
 
 

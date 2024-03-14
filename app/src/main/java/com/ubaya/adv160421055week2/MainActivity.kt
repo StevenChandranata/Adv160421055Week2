@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import androidx.navigation.ui.setupWithNavController
 import com.ubaya.adv160421055week2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,16 +17,19 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
-        setContentView(view) // change the argument of setContentView
+        setContentView(view)
 
-        navController =
-            (supportFragmentManager.findFragmentById(R.id.hostFragment)
-                    as NavHostFragment).navController
-        NavigationUI.setupActionBarWithNavController(this, navController)
+        navController = (supportFragmentManager.findFragmentById(R.id.hostFragment) as NavHostFragment).navController
+        NavigationUI.setupActionBarWithNavController(this, navController, binding.drawerLayout)
+        NavigationUI.setupWithNavController(binding.navView, navController)
+        binding.bottomNav.setupWithNavController(navController)
+
     }
     override fun onSupportNavigateUp(): Boolean {
-        return navController.navigateUp()
+        return NavigationUI.navigateUp(navController, binding.drawerLayout)
+                || super.onSupportNavigateUp()
     }
+
 
 
 }

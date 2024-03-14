@@ -6,4 +6,10 @@
     <string name="player_name">Player Name</string>
     <string name="back">back</string>
     <string name="player_s_turn">Player\'s Turn</string>
+    <string name="easy">Easy</string>
+    <string name="addition">Addition</string>
+    <string name="substraction">Substraction</string>
+    <string name="multiplication">Multiplication</string>
+    <string name="level">Level</string>
+    <string name="mathematic_operation">Mathematic Operation</string>
 </resources>
